@@ -7,10 +7,24 @@ mainClassName = 'se.soy.kanna.Main'
 group = 'se.soy.kanna'
 version = '1.0.0'
 
+ext {
+  versions = [
+    slf4j       : '1.7.30',
+    logback     : '1.2.3',
+  ]
+}
+
 repositories {
   mavenLocal()
   mavenCentral()
 }
 
 dependencies {
+  implementation "org.slf4j:slf4j-api:$versions.slf4j"
+
+  runtimeOnly "org.slf4j:jul-to-slf4j:$versions.slf4j"
+  runtimeOnly "org.slf4j:jcl-over-slf4j:$versions.slf4j"
+  runtimeOnly "org.slf4j:log4j-over-slf4j:$versions.slf4j"
+
+  runtimeOnly "ch.qos.logback:logback-classic:$versions.logback"
 }

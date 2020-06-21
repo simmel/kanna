@@ -13,6 +13,13 @@ public class Main extends org.apache.camel.blueprint.Main {
         setIncludeSelfAsBundle(Boolean.parseBoolean(parameter));
       }
     });
+
+    addOption(new ParameterOption("bn", "bundleName",
+          "Set the name of the bundle", "bundleName") {
+      protected void doProcess(String arg, String parameter, LinkedList<String> remainingArgs) {
+        setBundleName(parameter);
+      }
+    });
   }
 
   public static void main(String[] args) throws Exception {

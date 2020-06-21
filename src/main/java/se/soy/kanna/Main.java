@@ -6,6 +6,13 @@ public class Main extends org.apache.camel.blueprint.Main {
 
   public Main() {
     super();
+
+    addOption(new ParameterOption("is", "includeSelfAsBundle",
+          "Include self as Bundle", "includeSelfAsBundle") {
+      protected void doProcess(String arg, String parameter, LinkedList<String> remainingArgs) {
+        setIncludeSelfAsBundle(Boolean.parseBoolean(parameter));
+      }
+    });
   }
 
   public static void main(String[] args) throws Exception {

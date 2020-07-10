@@ -6,6 +6,12 @@
     </encoder>
   </appender>
 
+  <!-- Uninteresting/spammy logs -->
+  <!--
+  [Thread-1] INFO  org.ops4j.pax.swissbox.tinybundles.core.metadata.RawBuilder - Copy thread finished.
+  -->
+  <logger name="org.ops4j.pax.swissbox.tinybundles.core.metadata.RawBuilder" level="ERROR" />
+
   <root level="INFO">
     <appender-ref ref="STDOUT" />
   </root>

@@ -23,6 +23,12 @@
   -->
   <logger name="org.apache.camel.blueprint.BlueprintCamelStateService" level="ERROR" />
 
+  <!--
+	[main] INFO  org.apache.camel.main.DefaultRoutesCollector - No additional Camel XML routes discovered from: classpath:camel/*.xml
+	[main] INFO  org.apache.camel.main.DefaultRoutesCollector - No additional Camel XML rests discovered from: classpath:camel-rest/*.xml
+  -->
+  <logger name="org.apache.camel.main.DefaultRoutesCollector" level="ERROR" />
+
   <root level="INFO">
     <appender-ref ref="STDOUT" />
   </root>

@@ -12,6 +12,12 @@
   -->
   <logger name="org.ops4j.pax.swissbox.tinybundles.core.metadata.RawBuilder" level="ERROR" />
 
+  <!--
+  [main] INFO  org.apache.camel.core.osgi.impl.Activator - Camel activator starting
+  [main] INFO  org.apache.camel.core.osgi.impl.Activator - Camel activator started
+  -->
+  <logger name="org.apache.camel.core.osgi.impl.Activator" level="ERROR" />
+
   <root level="INFO">
     <appender-ref ref="STDOUT" />
   </root>

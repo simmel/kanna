@@ -22,7 +22,7 @@ public class Main extends org.apache.camel.blueprint.Main {
     });
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String...args) throws Exception {
     log.info("Starting Kanna");
 
     Main main = new Main();

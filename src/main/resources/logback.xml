@@ -18,6 +18,11 @@
   -->
   <logger name="org.apache.camel.core.osgi.impl.Activator" level="ERROR" />
 
+  <!--
+	[Blueprint Extender: 3] INFO  org.apache.camel.blueprint.BlueprintCamelStateService - Karaf BundleStateService not accessible. Bundle state won't reflect Camel context state
+  -->
+  <logger name="org.apache.camel.blueprint.BlueprintCamelStateService" level="ERROR" />
+
   <root level="INFO">
     <appender-ref ref="STDOUT" />
   </root>

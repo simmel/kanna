@@ -5,8 +5,8 @@ plugins {
   id 'signing'
 }
 
-mainClassName = 'se.soy.kanna.Main'
-group = 'se.soy.kanna'
+group = "se.soy.${project.name.toLowerCase()}"
+mainClassName = "${group}.Main"
 version = '1.0.0'
 
 ext {

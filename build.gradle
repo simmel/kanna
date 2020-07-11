@@ -35,6 +35,11 @@ dependencies {
   runtimeOnly "ch.qos.logback:logback-classic:$versions.logback"
 }
 
+java {
+  withJavadocJar()
+  withSourcesJar()
+}
+
 shadowJar {
   classifier = ''
 }
@@ -47,4 +52,10 @@ signing {
 
 tasks.withType(Sign) {
   onlyIf { isReleaseVersion }
+}
+
+javadoc {
+  if(JavaVersion.current().isJava9Compatible()) {
+    options.addBooleanOption('html5', true)
+  }
 }

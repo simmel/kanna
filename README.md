@@ -6,13 +6,13 @@ which runs your [OSGi Blueprints](https://docs.osgi.org/specification/osgi.cmpn/
 in sort of the same way that [Apache Karaf](https://karaf.apache.org) does and
 with logging enabled via [logback](https://logback.qos.ch/).
 
-### Caveats
-
-* No uberjar, only distTar
-
 ### Usage
 
 1. FIXME
+
+### Caveats
+
+* No uberjar, only distTar
 
 ### TODO
 

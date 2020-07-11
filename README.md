@@ -8,7 +8,10 @@ with logging enabled via [logback](https://logback.qos.ch/).
 
 ### Usage
 
-1. FIXME
+#### Maven
+
+1. FIXME Use the [maven-assembly-plugin](https://maven.apache.org/plugins/maven-assembly-plugin/)
+somehow, see [this blog-post](https://www.petrikainulainen.net/programming/tips-and-tricks/creating-a-runnable-binary-distribution-with-maven-assembly-plugin/).
 
 ### Caveats
 

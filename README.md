@@ -25,3 +25,4 @@ with logging enabled via [logback](https://logback.qos.ch/).
 
 * [ ] Investigate how to be used as uberjar
 * [ ] Be able to set bundle version?
+* [ ] Why doesn't it load `/OSGI-INF/blueprint/*.xml` automatically?

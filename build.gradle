@@ -3,6 +3,7 @@ plugins {
   id 'java'
   id 'com.github.johnrengelman.shadow' version '5.2.0'
   id 'signing'
+  id 'maven-publish'
 }
 
 group = "se.soy.${project.name.toLowerCase()}"
@@ -10,6 +11,8 @@ mainClassName = "${group}.Main"
 version = '1.0.0'
 
 ext {
+  url = "https://github.com/simmel/${project.name}"
+  gitRepo = "git@github.com:simmel/${project.name}.git"
   versions = [
     camel       : '3.3.0',
     slf4j       : '1.7.30',
@@ -44,10 +47,62 @@ shadowJar {
   classifier = ''
 }
 
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      artifact(shadowJar)
+      artifact(sourcesJar)
+      artifact(javadocJar)
+
+      pom {
+        name = project.name
+        description = 'a minimal Karaf to run Blueprints with Camel integrations'
+        url = project.url
+        packaging = 'jar'
+
+        licenses {
+          license {
+            name = 'ISC license'
+            url = 'https://www.isc.org/downloads/software-support-policy/isc-license/'
+            distribution = 'repo'
+          }
+        }
+
+        developers {
+          developer {
+            id = 'simmel'
+            name = 'Simon Lundström'
+            email = 'simmel@soy.se'
+          }
+        }
+
+        scm {
+          url = project.url
+          connection = "scm:git:${project.url}.git"
+          developerConnection = "scm:git:${project.gitRepo}"
+        }
+      }
+    }
+  }
+
+  repositories {
+    maven {
+      def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+      def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+      url = isReleaseVersion ? releasesRepoUrl : snapshotsRepoUrl
+
+      credentials {
+        username ossrhUsername
+        password ossrhPassword
+      }
+    }
+  }
+}
+
 signing {
   useGpgCmd()
   required { isReleaseVersion && gradle.taskGraph.hasTask("publish") }
-  sign configurations.archives
+  sign publishing.publications.mavenJava
 }
 
 tasks.withType(Sign) {

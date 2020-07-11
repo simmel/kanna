@@ -96,6 +96,8 @@ somehow, see [this blog-post](https://www.petrikainulainen.net/programming/tips-
 
 ### TODO
 
+* [ ] How can we provided sane defaults? bundleName, configAdmin{Pid,FileName},
+  applicationContext and fileApplicationContext based on project name. In the distribution script or Main.java?
 * [ ] Investigate how to be used as uberjar
 * [ ] Be able to set bundle version?
 * [ ] Why doesn't it load `/OSGI-INF/blueprint/*.xml` automatically?

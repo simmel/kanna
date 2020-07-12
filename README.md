@@ -87,8 +87,8 @@ somehow, see [this blog-post](https://www.petrikainulainen.net/programming/tips-
 
 * Unfortunately I haven't figured out use this in an uberjar. When packages as
   an uberjar camel-blueprint-main can't find the needed bundles, probably because
-	shadow/shade trashes something in `/META-INF/` in the jars in some way. It's
-	not related to services because shadow/shade handles that. dist{Tar,Zip}
+  shadow/shade trashes something in `/META-INF/` in the jars in some way. It's
+  not related to services because shadow/shade handles that. dist{Tar,Zip}
   works perfectly though!
 * Your blueprints aren't automatically loaded from `/OSGI-INF/blueprint/*.xml`
   as it should, so you need `-ac /OSGI-INF/blueprint/your-blueprint.xml` as an

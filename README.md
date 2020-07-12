@@ -8,6 +8,33 @@ with logging enabled via [logback](https://logback.qos.ch/).
 
 ### Usage
 
+```terminal
+$ yourintegration/bin/yourintegration -h
+[main] INFO  se.soy.kanna.Main - Starting Kanna
+Apache Camel Runner takes the following options
+
+  -h or -help = Displays the help screen
+  -r or -routers <routerBuilderClasses> = Sets the router builder classes which will be loaded while starting the camel context
+  -d or -duration <duration> = Sets the time duration (seconds) that the application will run for before terminating.
+  -dm or -durationMaxMessages <durationMaxMessages> = Sets the duration of maximum number of messages that the application will process before terminating.
+  -di or -durationIdle <durationIdle> = Sets the idle time duration (seconds) duration that the application can be idle before terminating.
+  -t or -trace = Enables tracing
+  -e or -exitcode <exitcode> = Sets the exit code if duration was hit
+  -pl or -propertiesLocation <propertiesLocation> = Sets location(s) to load properties, such as from classpath or file system.
+  -ac or -applicationContext <applicationContext> = Sets the classpath based OSGi Blueprint
+  -fa or -fileApplicationContext <fileApplicationContext> = Sets the filesystem based OSGi Blueprint
+  -pid or -configAdminPid <configAdminPid> = Sets the ConfigAdmin persistentId
+  -pf or -configAdminFileName <configAdminFileName> = Sets the ConfigAdmin persistent file name
+  -is or -includeSelfAsBundle <includeSelfAsBundle> = Include self as Bundle
+  -bn or -bundleName <bundleName> = Set the name of the bundle
+[main] INFO  org.apache.camel.main.MainSupport - MainSupport exiting code: 0
+```
+
+So you can put your OSGi Blueprint every where you'd like and use it with
+`-fileApplicationContext` or put it inside your `.jar` and use it with
+`-applicationContext`. You can also specify a `-configAdminFileName` file to
+save sensitive or ever changing things in like passwords, URLs etc in.
+
 #### Gradle
 
 1. [Create a new Gradle project](https://guides.gradle.org/creating-new-gradle-builds/#initialize_a_project) in a folder e.g. `yourintegration`

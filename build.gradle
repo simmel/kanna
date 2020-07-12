@@ -8,7 +8,7 @@ plugins {
 
 group = "se.soy.${project.name.toLowerCase()}"
 mainClassName = "${group}.Main"
-version = '1.0.0-SNAPSHOT'
+version = '1.0.0'
 
 ext {
   url = "https://github.com/simmel/${project.name}"
